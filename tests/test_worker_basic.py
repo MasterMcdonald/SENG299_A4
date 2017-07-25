@@ -60,8 +60,16 @@ class TestWorkerBasic(unittest.TestCase):
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
     """
+    def test_zelan_test_one(self):
+        worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        worker.crawled = []
 
+        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
+        len_to_crawl_before = len(worker.to_crawl)
+        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
+        len_to_crawl_after = len(worker.to_crawl)
 
+        self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
 
