@@ -15,4 +15,4 @@ class TestMothershipBasic(unittest.TestCase):
         mothership.run()
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         worker.run()
-        self.assertRaises(ValueError, worker.send_to_mother(worker, None, mothership))
+        self.assertRaises(ValueError, worker.send_to_mother(None, mothership))
