@@ -98,8 +98,8 @@ class TestWorkerBasic(unittest.TestCase):
 
         len_to_crawl_before = len(worker.to_crawl)
         worker.add_links(["https://a.com"])
-
-        self.assertRaises(IOError, worker.run)
+        len_to_crawl_after = len(worker.to_crawl)
+        self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
 
