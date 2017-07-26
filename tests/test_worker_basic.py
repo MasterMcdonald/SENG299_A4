@@ -79,7 +79,7 @@ class TestWorkerBasic(unittest.TestCase):
         this test is to test if add one to worker correctly
         """
         worker = None
-        worker = BasicUserParseWorker("https://www.reddit.com")
+        worker = BasicUserParseWorker(["https://www.reddit.com"])
         worker.crawled = []
 
         len_to_crawl_before = len(worker.to_crawl)
