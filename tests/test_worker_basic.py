@@ -88,7 +88,18 @@ class TestWorkerBasic(unittest.TestCase):
 
         self.assertIn("https://www.reddit.com/user/Chrikelnel", worker.to_crawl)
     
-        
+    def test_zelan_test_three(self):
+        """
+        this test is to test if the added link in list
+        """
+        worker = None
+        worker = BasicUserParseWorker("https://www.reddit.com")
+        worker.crawled = []
+
+        len_to_crawl_before = len(worker.to_crawl)
+        worker.add_links(["https://a.com"])
+
+        self.assertRaises(IOError, worker.run)
 
 
 
