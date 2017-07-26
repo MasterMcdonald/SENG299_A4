@@ -20,4 +20,4 @@ class TestMothershipBasic(unittest.TestCase):
         #    worker.run()
         #except ConnectionRefusedError:
         #    self.fail("Error")
-        self.assertRaises(ValueError, worker.send_to_mother(worker, None, mothership))
+        self.assertRaises(ValueError, worker.send_to_mother(None, mothership))
