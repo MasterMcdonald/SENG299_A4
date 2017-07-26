@@ -104,7 +104,7 @@ class TestWorkerBasic(unittest.TestCase):
 
     def test_zelan_test_four(self):
         """
-        this test is to test if the added link in list
+        this test is to test if the added two links in list, which the two links are not same
         """
         worker = None
         worker = BasicUserParseWorker("https://www.reddit.com")
