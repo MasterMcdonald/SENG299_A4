@@ -90,7 +90,7 @@ class TestWorkerBasic(unittest.TestCase):
     
     def test_zelan_test_three(self):
         """
-        this test is to test if the added link in list
+        this test is to test if the added two links in list, which the two links are same
         """
         worker = None
         worker = BasicUserParseWorker("https://www.reddit.com")
@@ -102,5 +102,16 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before+1)
 
 
-
+    def test_zelan_test_four(self):
+        """
+        this test is to test if the added link in list
+        """
+        worker = None
+        worker = BasicUserParseWorker("https://www.reddit.com")
+        worker.crawled = []
+        worker.add_links("https://www.reddit.com/user/Chrikelnel")
+        len_to_crawl_before = len(worker.to_crawl)
+        worker.add_links("https://www.reddit.com/user/Chrikelnel")
+        len_to_crawl_after = len(worker.to_crawl)
+        self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
