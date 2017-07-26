@@ -15,8 +15,8 @@ class TestMothershipBasic(unittest.TestCase):
         mothership = MothershipServer()
         mothership.run()
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-        try:
-            worker.run()
-        except ConnectionRefusedError:
-            self.fail("Error")
-        #self.assertRaises(ValueError, worker.send_to_mother(None, mothership))
+        #try:
+        #    worker.run()
+        #except ConnectionRefusedError:
+        #    self.fail("Error")
+        self.assertRaises(ValueError, worker.send_to_mother(worker, None, mothership))
