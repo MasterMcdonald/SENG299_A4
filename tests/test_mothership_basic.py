@@ -5,9 +5,8 @@ from mothership.base import MothershipServer
 
 
 class TestMothershipBasic(unittest.TestCase):
-    pass
-    '''@unittest.expectedFailure
-    def test_zelan_test_two(self):
+   
+    def test_zelan_test_three(self):
         """
         this test is to test if handle worker contact
         worker not running
@@ -15,5 +14,6 @@ class TestMothershipBasic(unittest.TestCase):
         mothership = MothershipServer()
         mothership.run()
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-        self.assertRaises(ConnectionRefusedError, worker.run)
-    '''
+		worker.run()
+        self.assertRaises(ValueError, worker.send_to_mother(worker, None, mothership))
+    

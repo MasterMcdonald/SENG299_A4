@@ -67,6 +67,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker = None
         worker = BasicUserParseWorker("https://www.reddit.com")
         worker.crawled = []
+        worker.max_links = 5
 
         len_to_crawl_before = len(worker.to_crawl)
         worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
@@ -76,8 +77,7 @@ class TestWorkerBasic(unittest.TestCase):
 
     def test_zelan_test_two(self):
         """
-        this test is to test if handle worker contact
-        worker not running
+        this test is to test if the added link in list
         """
         worker = None
         worker = BasicUserParseWorker("https://www.reddit.com")
