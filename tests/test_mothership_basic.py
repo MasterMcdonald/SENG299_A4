@@ -5,7 +5,7 @@ from mothership.base import MothershipServer
 
 
 class TestMothershipBasic(unittest.TestCase):
-   
+    pass
     def test_zelan_test_three(self):
         """
         this test is to test if handle worker contact
